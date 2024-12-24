@@ -28,7 +28,7 @@ def calculate_motor_yield(dog_leg, feet_slid):
     """
     if feet_slid <= 0:
         raise ValueError("La cantidad de pies deslizados debe ser mayor que cero.")
-    motor_yield = dog_leg / feet_slid
+    motor_yield = dog_leg / feet_slid*100
     return motor_yield
 
 def calculate_feet_to_slide(desired_dog_leg, motor_yield):
@@ -37,7 +37,7 @@ def calculate_feet_to_slide(desired_dog_leg, motor_yield):
     """
     if motor_yield <= 0:
         raise ValueError("El motor yield debe ser mayor que cero.")
-    feet_slid = desired_dog_leg / motor_yield
+    feet_slid = desired_dog_leg / motor_yield/100
     return feet_slid
 
 # Interfaz de Streamlit
@@ -52,13 +52,13 @@ if st.button("Calcular Motor Yield"):
     try:
         motor_yield = calculate_motor_yield(dog_leg, feet_slid)
         st.session_state.motor_yield = motor_yield  # Guardar el valor en session_state
-        st.success(f"El Motor Yield es: {motor_yield:.4f} grados por pie deslizado.")
+        st.success(f"El Motor Yield es: {motor_yield:.4f} grados por 100 pies.")
     except ValueError as e:
         st.error(str(e))
 
 # Mostrar Motor Yield si ya está calculado
 if "motor_yield" in st.session_state:
-    st.info(f"Motor Yield actual: {st.session_state.motor_yield:.4f} grados por pie deslizado.")
+    st.info(f"Motor Yield actual: {st.session_state.motor_yield:.4f} grados por 100 pies.")
 
 # Paso 2: Calcular los Pies Necesarios para un Dogleg Deseado
 st.header("Paso 2: Calcular los Pies Necesarios para un Dogleg Deseado")
