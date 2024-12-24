@@ -41,7 +41,7 @@ def calculate_feet_to_slide(desired_dog_leg, motor_yield):
     return feet_slid
 
 # Interfaz de Streamlit
-st.title("Cálculo de Motor Yield y Pies a deslizar para la siguiente estación realizado por DIOMER ALGENDONIS")
+st.title("Cálculo de Motor Yield y Pies a deslizar para la siguiente estación. Realizado por: Diomer Algendonis")
 
 # Paso 1: Calcular el Motor Yield
 st.header("Paso 1: Calcular el Motor Yield")
