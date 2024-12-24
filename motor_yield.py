@@ -41,12 +41,12 @@ def calculate_feet_to_slide(desired_dog_leg, motor_yield):
     return feet_slid
 
 # Interfaz de Streamlit
-st.title("Cálculo de Motor Yield y Pies Deslizados")
+st.title("Cálculo de Motor Yield y Pies a deslizar para la siguiente estación")
 
 # Paso 1: Calcular el Motor Yield
 st.header("Paso 1: Calcular el Motor Yield")
 dog_leg = st.number_input("Ingresa el Dogleg Severity actual (en grados por 100 pies):", min_value=0.0, step=0.1)
-feet_slid = st.number_input("Ingresa la cantidad de pies deslizados:", min_value=0.0, step=1.0)
+feet_slid = st.number_input("Ingresa la cantidad de pies deslizados leídos:", min_value=0.0, step=1.0)
 
 if st.button("Calcular Motor Yield"):
     try:
