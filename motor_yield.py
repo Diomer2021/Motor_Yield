@@ -37,7 +37,7 @@ def calculate_feet_to_slide(desired_dog_leg, motor_yield):
     """
     if motor_yield <= 0:
         raise ValueError("El motor yield debe ser mayor que cero.")
-    feet_slid = desired_dog_leg / motor_yield/100
+    feet_slid = desired_dog_leg / motor_yield
     return feet_slid
 
 # Interfaz de Streamlit
