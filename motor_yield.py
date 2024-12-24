@@ -52,13 +52,13 @@ if st.button("Calcular Motor Yield"):
     try:
         motor_yield = calculate_motor_yield(dog_leg, feet_slid)
         st.session_state.motor_yield = motor_yield  # Guardar el valor en session_state
-        st.success(f"El Motor Yield es: {motor_yield:.4f} grados por 100 pies.")
+        st.success(f"El Motor Yield es: {motor_yield:.2f} grados por 100 pies.")
     except ValueError as e:
         st.error(str(e))
 
 # Mostrar Motor Yield si ya está calculado
 if "motor_yield" in st.session_state:
-    st.info(f"Motor Yield actual: {st.session_state.motor_yield:.4f} grados por 100 pies.")
+    st.info(f"Motor Yield actual: {st.session_state.motor_yield:.2f} grados por 100 pies.")
 
 # Paso 2: Calcular los Pies Necesarios para un Dogleg Deseado
 st.header("Paso 2: Calcular los Pies Necesarios para un Dogleg Deseado")
