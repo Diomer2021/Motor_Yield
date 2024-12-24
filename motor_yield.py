@@ -51,3 +51,13 @@ if st.button("Calcular Pies Necesarios"):
             st.warning("Por favor, calcula primero el Motor Yield.")
     except ValueError as e:
         st.error(str(e))
+
+# Pie de página
+st.markdown("---")  # Línea separadora
+st.markdown(
+    """
+    **Realizado por:** Diomer Algendonis (https://www.linkedin.com/in/diomer-algendonis-reyes-44395067/)  
+    **Contacto:** mailto:diomer.algendonis@gmail.com
+    **Repositorio GitHub:** [Ver código fuente](https://github.com/Diomer2021/Motor_Yield)
+    """
+)
