@@ -1,6 +1,25 @@
 
-
 import streamlit as st
+
+# Estilo personalizado para botones
+st.markdown(
+    """
+    <style>
+    div.stButton > button:first-child {
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    div.stButton > button:first-child:hover {
+        background-color: darkred;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 # Funciones de cálculo
 def calculate_motor_yield(dog_leg, feet_slid):
@@ -32,10 +51,14 @@ feet_slid = st.number_input("Ingresa la cantidad de pies deslizados:", min_value
 if st.button("Calcular Motor Yield"):
     try:
         motor_yield = calculate_motor_yield(dog_leg, feet_slid)
-        st.session_state.motor_yield = motor_yield  # Guardar el valor de motor_yield en session_state
+        st.session_state.motor_yield = motor_yield  # Guardar el valor en session_state
         st.success(f"El Motor Yield es: {motor_yield:.4f} grados por pie deslizado.")
     except ValueError as e:
         st.error(str(e))
+
+# Mostrar Motor Yield si ya está calculado
+if "motor_yield" in st.session_state:
+    st.info(f"Motor Yield actual: {st.session_state.motor_yield:.4f} grados por pie deslizado.")
 
 # Paso 2: Calcular los Pies Necesarios para un Dogleg Deseado
 st.header("Paso 2: Calcular los Pies Necesarios para un Dogleg Deseado")
