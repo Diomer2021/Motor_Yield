@@ -56,7 +56,7 @@ if st.button("Calcular Pies Necesarios"):
 st.markdown("---")  # Línea separadora
 st.markdown(
     """
-    **Realizado por:** [Diomer Algendonis] (https://www.linkedin.com/in/diomer-algendonis-reyes-44395067/)  
+    **Realizado por:** [Diomer Algendonis](https://www.linkedin.com/in/diomer-algendonis-reyes-44395067/)  
     **Contacto:** [diomer.algendonis@gmail.com](diomer.algendonis@gmail.com)  
     **Repositorio GitHub:** [Ver código fuente](https://github.com/Diomer2021/Motor_Yield)
     """
